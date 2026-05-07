@@ -11,7 +11,7 @@ GL_TEST = os.getenv("GATES") == "yes"
 async def test_single_transaction(dut):
 
     if GL_TEST:
-        print("GL Test: cannot check, functionality confirmed by emulation")
+        print("GL Test: cannot check, not sure why")
         return
 
     dut._log.info("Start")
