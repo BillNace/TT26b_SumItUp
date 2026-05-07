@@ -21,7 +21,7 @@ module tt_um_BillNace_SumItUp (
               .go_l(uio_in[0]),
               .inA(ui_in),
               .done(uio_out[1]),
-              .sum(uio_out)
+              .sum(uo_out)
              );
              
   assign uio_oe[0] = 1'b0; // go_l is an input
@@ -30,10 +30,10 @@ module tt_um_BillNace_SumItUp (
   // All output pins must be assigned. If not used, assign to 0.
   assign uio_oe[7:2] = 6'b0; // All other bidirectional signals are inputs
   assign uio_out[0] = 1'b0;
-  assign uio_out[7:1] = 1'b0;
+  assign uio_out[7:1] = 7'b0;
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{uio_in[7:1], 1'b0};
+  wire _unused = &{ena, uio_in[7:1], 1'b0};
 
 endmodule : tt_um_BillNace_SumItUp
 
