@@ -4,6 +4,7 @@
 import cocotb
 from cocotb.clock import Clock
 from cocotb.triggers import ClockCycles
+import os
 
 GL_TEST = os.getenv("GATES") == "yes"
 
